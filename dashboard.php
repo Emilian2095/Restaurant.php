@@ -25,11 +25,9 @@
                         <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="dishes.php">Dishes</a>
+                        <a class="nav-link text-light" href="userDishes.php">Dishes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="form.php">Add food</a>
-                    </li>
+
                     <li> <a class="nav-link text-light" href="logout.php?logout">Logout</a></li>
                 </ul>
             </div>

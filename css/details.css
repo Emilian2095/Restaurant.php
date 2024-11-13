@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 body{
-    background-image:url(../media/details.jpg);
+    background-image:url(../media/details.jpg
+    );
     background-size: cover;
     background-position: center;
 }

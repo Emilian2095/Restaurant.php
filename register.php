@@ -81,7 +81,7 @@ if (isset($_POST['register'])) {
     <form method="post" enctype="multipart/form-data">
         <span class="h1">Register</span>
         <label for="name">
-            <span>First Name:</span><input type="text" id="name" name="name">
+            <span>Name:</span><input type="text" id="name" name="name">
             <p style="color: white"><?= $nameError ?></p>
         </label>
         <label for="email">
@@ -98,6 +98,7 @@ if (isset($_POST['register'])) {
         <span>Image:</span><input class="file" type="file" name="image">
 
         <input class="btn" type="submit" name="register" value="Register">
+        <div class="noAccount"><span class="noAccount1">you have an account? <button><a class="register" href="login.php">login here</a></button></span></div>
     </form>
 
 </body>
