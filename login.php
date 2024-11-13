@@ -14,7 +14,7 @@ require_once "data/db_connect.php";
 $error = false;  // by default, a varialbe $error is false, means there is no error in our form
 
 $email = ""; // define variables and set them to empty string
-$emailError = $passwordError = $nameError = ""; // define variables that will hold error messages later, for now empty string 
+$emailError = $passwordError = $nameError =  $loginError = ""; // define variables that will hold error messages later, for now empty string 
 
 if (isset($_POST["login"])) {
     $email = cleaningInputs($_POST["email"]);
@@ -51,9 +51,8 @@ if (isset($_POST["login"])) {
                 header("Location: dashboard.php");
             }
         } else {
-            echo "<div class='alert alert-danger'>
-                        <p>Something went wrong, please try again later ...</p>
-                      </div>";
+            $loginError = "
+    <div class='login-error'>Something went wrong. Please try again later </div>";
         }
     }
 }
@@ -72,22 +71,23 @@ if (isset($_POST["login"])) {
 <body>
 
 
+    <?= $loginError ?>
 
 
     <form method="post" enctype="multipart/form-data">
         <span class="h1">Login</span>
         <label for="name">
             <span>Name:</span><input type="text" id="name" name="name">
-            <p style="color: white"><?= $nameError ?></p>
+            <p class="error"><?= $nameError ?></p>
         </label>
         <label for="email">
             <span>Email:</span><input type="text" id="email" name="email">
-            <p style="color: white"><?= $emailError ?></p>
+            <p class="error"><?= $emailError ?></p>
 
         </label>
         <label for="password">
             <span>Password:</span><input type="password" id="password" name="password">
-            <p style="color: white"><?= $passwordError ?></p>
+            <p class="error"><?= $passwordError ?></p>
 
         </label>
 

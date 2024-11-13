@@ -70,4 +70,21 @@ button{
     margin-left: 4.1rem;
     color: whitesmoke;
 }
+.error{
+    color: whitesmoke;
+    font-weight: bold;
+   
+}
+h1{
+    color: red;
+    text-align: center;
+}
+.login-error{
+    border: 3px solid grey;
+    color: red;
+    font-size: 3rem;
+    text-align: center;
+    backdrop-filter: blur(1.5rem);
+    padding: 1rem;
 
+}

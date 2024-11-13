@@ -8,6 +8,7 @@ if (!$conn) {
 }
 $error = false;
 $name = $email = '';
+$loginError = "";
 $nameError = $emailError = $passwordError = '';
 if (isset($_POST['register'])) {
     $name = cleaningInputs($_POST['name']);
@@ -51,12 +52,11 @@ if (isset($_POST['register'])) {
         $sql = "INSERT INTO `register`(`name`, `email`, `password`, `image`) VALUES ('$name','$email','$password','$image[0]')";
 
         $result = mysqli_query($conn, $sql);
+
         if ($result) {
             header("Location: login.php");
         } else {
-            echo "<div class='alert alert-danger' role='alert'>
-                    <p>Something went wrong. Please try again later</p>
-                </div>";
+            $loginError = "Something went wrong. Please try again later";
         }
     }
 }
@@ -76,22 +76,22 @@ if (isset($_POST['register'])) {
 <body>
 
 
-
+    <h1><?= $loginError ?></h1>
 
     <form method="post" enctype="multipart/form-data">
         <span class="h1">Register</span>
         <label for="name">
             <span>Name:</span><input type="text" id="name" name="name">
-            <p style="color: white"><?= $nameError ?></p>
+            <p class="error"><?= $nameError ?></p>
         </label>
         <label for="email">
             <span>Email:</span><input type="text" id="email" name="email">
-            <p style="color: white"><?= $emailError ?></p>
+            <p class="error"><?= $emailError ?></p>
 
         </label>
         <label for="password">
             <span>Password:</span><input type="password" id="password" name="password">
-            <p style="color: white"><?= $passwordError ?></p>
+            <p class="error"><?= $passwordError ?></p>
 
         </label>
 
