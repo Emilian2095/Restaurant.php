@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image:url(../media/details.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.details1{
+    width: 400px;
+    height: 550px;
+    margin: 2rem auto;
+    border: 5px double teal;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 15px teal;
+    background-color: whitesmoke;
+}
+ img{
+  
+    margin-right: 15px;
+    width: 100%;
+    max-height: 200px;
+ }
+ .navbar{
+    background-color: rgb(0, 0, 0) ;}
+    span{
+        color: goldenrod;
+        font-weight: bold;
+    }
+
+    #span{
+        font-weight: bold;
+    } #links{
+        font-weight: bold;
+      color: whitesmoke;
+     }
+     .author{
+        text-decoration: none;
+        color: teal;
+        font-weight: bold;
+       
+     }
+     .price{
+        color: goldenrod;
+     }
+     h5{
+        text-align: center;
+        font-weight: bold;
+        color: tomato;
+        margin-top: .5rem;
+     }

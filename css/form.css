@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../media/add.jpg);
+    background-size: cover;
+}
+.form{
+    width: 400px;
+    margin:5rem auto;
+    border: 1px solid grey;
+    background-color: rgba(0, 0, 0, 0.349);
+    backdrop-filter: blur(1rem);
+}
+.container-fluid{
+    max-height: 40px;
+    width: 100%;
+  
+}
+span{
+    color: goldenrod;
+    font-weight: bold;
+}
+.navbar{
+    background-color: rgb(0, 0, 0) ;
+}
+.inputs{
+margin-top: .5rem;
+margin-bottom: .5rem;
+margin-left: .5rem;
+text-align: center;
+}
+.submit{
+    margin-left: 40%;
+    font-weight: bold;
+   
+} #links{
+    font-weight: bold;
+  color: whitesmoke
+ }

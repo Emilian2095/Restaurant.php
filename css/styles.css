@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+body{
+    background-image: url(../media/home.jpg);
+    background-size: cover;
+}
+
+
+.about{
+
+    width: 400px;
+    top: 10rem;
+    left: 5rem;
+    background-color: rgba(0, 0, 0, 0.363);
+    color: whitesmoke;
+    padding-inline: 2rem;
+    max-height: 700px;
+    backdrop-filter: blur(1rem);
+
+   
+}
+.about-us{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: teal;
+}
+.navbar{
+    z-index: 1;
+    background-color:  black;
+    width: 100%;
+}
+.title{
+    color: goldenrod;
+    font-weight: bold;
+}
+.absolute{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-top: 5rem;
+   
+ 
+}
+.allVideos{
+    clip-path: polygon(0 0, 44% 0, 100% 100%, 49% 100%);
+    width: 70%;
+    background-color:rgba(128, 128, 128, 0.418);
+   
+}
+.video-1{
+    margin-left: 10rem;
+}
+.video-2{
+    margin-left: 20rem;
+}
+.video-3{
+    margin-left: 32rem;
+}
