@@ -1,24 +1,20 @@
 <?php
 
-function fileUpload($picture)
+function fileUpload($image)
 {
-    if ($picture['error'] == 4) {
-        $pictureName = "product.jpg";
-        $message = "No picture has been chosen, but you can upload a picture later";
-    } else {
-        $checkIfImage = getimagesize($picture['tmp_name']);
-        $message = $checkIfImage ? "OK" : "Not an image";
-    }
 
-    if ($message == "OK") {
-        // Modify the name
-        // Take out the extension and save it to a variable ex. picture1.jpg
-        // Change the name to a unique name, and then add the extension back
-        $ext = strtolower(pathinfo($picture['name'], PATHINFO_EXTENSION));
-        $pictureName = uniqid("") . "." . $ext;  // 156156156156151.jpg
-        $destination = "pictures/{$pictureName}";
-        move_uploaded_file($picture["tmp_name"], $destination);
+    if ($image['error'] === 4) {
+        $imageName = 'user.jpg';
+        $message = 'No image was uploaded, but you can do it later';
+    } else {
+        $checkImage = getimagesize($image['tmp_name']);
+        $message = $checkImage ? 'Done' : 'Not an image';
     }
-    //        0             1
-    return [$pictureName, $message];
+    if ($message === 'Done') {
+        $ext = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
+        $imageName = uniqid("") . "." . $ext;
+        $destination = "image/{$imageName}";
+        move_uploaded_file($image["tmp_name"], $destination);
+    }
+    return [$imageName, $message];
 }
