@@ -6,7 +6,7 @@ body{
 
 form{
     width: 300px;
-    height: 350px;
+    height: 400px;
     backdrop-filter: blur(2rem);
     border-radius: 10px;
     margin: 1rem auto;
@@ -16,6 +16,7 @@ form{
     padding: 9px;
     display: flex;
     flex-direction: column;
+    ;
     
   
 }
@@ -23,15 +24,33 @@ label{
     text-align: center;
     font-weight: bold;
     color: #05361b;
+    padding-top: .5rem
 }
 .title{
     text-align: center;
 }
 .navbar{
-    background-color: rgb(0, 0, 0) ;
+    background-color:#003116;
   
 }
 span{
     color: goldenrod;
+    font-weight: bold;
+}
+button{
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 4.5rem;
+    max-height: 2rem;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    color: #003116;
+    font-weight: bold;
+    
+}
+.message{
+    width: 100%;
+    text-align: center;
+    color: #003116;
     font-weight: bold;
 }

@@ -1,7 +1,20 @@
 <?php
-if (isset($_POST)) {
-    $dateTime = "datetime";
+if (isset($_POST["reserve"])) {
+    $name = "name";
+    $email = "email";
+    $dateTime = $_POST["datetime"];
     $time = "time";
+    $hourTime = $_POST["hourTime"];
+    $hourOnly = intval(substr($hourTime, 0, 2));
+
+
+    $response = "";
+
+    if ($hourOnly >= 7 && $hourOnly <= 12) {
+        $response = "Your reservation has been saved";
+    } else {
+        $response = "We are not open at the chossen time";
+    }
 }
 ?>
 
@@ -19,7 +32,7 @@ if (isset($_POST)) {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg position-fixed">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><span class="title">Ze Food</span>
             </a>
@@ -39,12 +52,20 @@ if (isset($_POST)) {
     <div class="title">
         <h1>Online Reservation</h1>
     </div>
+    <div class="message"><?= $response ?? "" ?></div>
     <form method="post">
 
-        <label for="datetime">Select the time and date</label>
-        <input type="datetime-local" name="datetime" id="datetime">
-        <label for="time">Select for how long</label>
-        <input type="number" name="time" id="time">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required>
+        <label for="datetime">Select date</label>
+        <input type="date" name="datetime" id="datetime" required>
+        <label for="time">Select the time</label>
+        <input type="time" min="09:00" max="18:00" name="hourTime" id="time" required>
+        <label for="number">Select for how long</label>
+        <input type="number" name="number" id="number" required>
+
 
         <button type="submit" name="reserve">Reserve</button>
 
