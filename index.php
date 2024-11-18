@@ -1,3 +1,19 @@
+<?php
+session_start();
+if (isset($_SESSION['register'])) {
+    header("Location: dashboard.php");
+    exit;
+}
+if (!isset($_SESSION['register']) && !isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit;
+}
+require_once "data/db_connect.php"
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

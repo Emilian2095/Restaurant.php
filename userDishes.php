@@ -1,6 +1,12 @@
 <?php
+session_start();
 
-require_once "data\db_connect.php";
+
+if (!isset($_SESSION['register']) && !isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit;
+}
+require_once "data/db_connect.php";
 
 $sql = "SELECT * FROM `dishes`";
 
@@ -52,7 +58,7 @@ if (mysqli_num_rows($result) > 0) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">
+                        <a class="nav-link active" aria-current="page" href="dashboard.php">
                             <span id="links">Home</span>
                         </a>
                     </li>

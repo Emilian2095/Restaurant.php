@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['register']) && !isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit;
+}
+require_once "data/db_connect.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link active text-light" aria-current="page" href="dashboard.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="userDishes.php">Dishes</a>

@@ -1,12 +1,13 @@
 <?php
+
 session_start();
 
 if (isset($_SESSION["register"])) { // if a session "register" is exist and have a value
-    header("Location: index.php"); // redirect the register to the index page
+    header("Location: dashboard.php"); // redirect the register to the index page
 }
 
 if (isset($_SESSION["admin"])) { // if a session "admin" is exist and have a value
-    header("Location: dashboard.php"); // redirect the adminin to the dashboard page
+    header("Location: index.php"); // redirect the adminin to the dashboard page
 }
 
 require_once "data/db_connect.php";
