@@ -72,6 +72,19 @@ footer p {
     text-align: center;
    
  }
-
+ .colorLink{
+    color: whitesmoke;
+    font-weight: bold;
+}
+a:hover{
+    .colorLink{
+        color: black;
+        font-weight: bold;
+    };
+background-color: whitesmoke;
+font-weight: bold;
+border-radius: 10px;
+box-shadow: 4px 4px 5px grey;
+}
 
  

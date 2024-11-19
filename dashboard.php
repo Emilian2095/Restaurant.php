@@ -26,21 +26,24 @@ require_once "data/db_connect.php";
 
     <nav class="navbar navbar-expand-lg position-fixed">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><span class="title">Ze Food</span>
-            </a>
+            <span class="navbar-brand" href="#"><span class="title">Ze Food</span>
+            </span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="dashboard.php">Home</a>
+                        <a class="nav-link active text-light" aria-current="page" href="dashboard.php"><span class="colorLink">Home</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="userDishes.php">Dishes</a>
+                        <a class="nav-link text-light" href="userDishes.php"><span class="colorLink">Dishes</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservation.php"><span class="colorLink">Reservation</span></a>
                     </li>
 
-                    <li> <a class="nav-link text-light" href="logout.php?logout">Logout</a></li>
+                    <li> <a class="nav-link text-light" href="logout.php?logout"><span class="colorLink">Logout</span></a></li>
                 </ul>
             </div>
         </div>

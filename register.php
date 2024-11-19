@@ -7,7 +7,8 @@ if (!$conn) {
     die("Database connection failed: " . mysqli_connect_error());
 }
 $error = false;
-$name = $email = '';
+$name = '';
+$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $loginError = "";
 $nameError = $emailError = $passwordError = '';
 if (isset($_POST['register'])) {
@@ -54,6 +55,16 @@ if (isset($_POST['register'])) {
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
+
+            $to      = 'valentyneemilian@yahoo.com';
+            $subject = 'Restaurant new registration';
+            $message = 'registered: ' . $name . $email;
+            $headers = 'From: valentyne@yahoo.com' . "\r\n" .
+                'Reply-To: valentyneemilian@yahoo.com' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+
+            $res = mail($to, $subject, $message, $headers);
+
             header("Location: login.php");
         } else {
             $loginError = "Something went wrong. Please try again later";
